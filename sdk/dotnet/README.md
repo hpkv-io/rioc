@@ -354,7 +354,3 @@ dotnet run --project HPKV.RIOC.Benchmark/src/HPKV.RIOC.Benchmark.csproj -- \
 dotnet run --project HPKV.RIOC.Benchmark/src/HPKV.RIOC.Benchmark.csproj -- \
     -h localhost -p 8000 -n 4 -o 10000 -s 1024 -v
 ```
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 

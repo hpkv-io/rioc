@@ -365,7 +365,3 @@ The test suite includes:
 - Node.js 18.0.0 or later
 - Windows, Linux, or macOS
 - x64 or ARM64 architecture
-
-## License
-
-MIT

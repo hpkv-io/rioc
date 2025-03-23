@@ -306,7 +306,3 @@ The SDK supports the following platforms:
 - Windows (x64)
 - Linux (x64)
 - macOS (x64, arm64)
-
-## License
-
-MIT License 
