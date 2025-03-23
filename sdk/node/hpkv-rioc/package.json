@@ -31,7 +31,7 @@
     "kv-store"
   ],
   "author": "HPKV Team",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/mehrantsi/kernel-high-performance-kv-store"

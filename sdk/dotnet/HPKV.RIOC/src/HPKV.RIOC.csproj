@@ -16,7 +16,7 @@
     <Company>HPKV</Company>
     <Description>High Performance Key-Value Store .NET Client SDK</Description>
     <PackageTags>key-value-store;high-performance;rioc;database;storage;kv-store</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/mehrantsi/kernel-high-performance-kv-store</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mehrantsi/kernel-high-performance-kv-store</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
