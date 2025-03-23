@@ -1,0 +1,76 @@
+{
+  "name": "hpkv-rioc",
+  "version": "1.0.0-alpha.2",
+  "description": "Node.js Client SDK for High Performance Key-Value Store (HPKV)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "install": "node-gyp rebuild",
+    "build": "tsc",
+    "test": "mocha -r ts-node/register 'test/**/*.test.ts'",
+    "benchmark": "ts-node benchmark/index.ts",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "docs": "typedoc --out docs src/index.ts",
+    "clean": "node-gyp clean",
+    "prepare": "node scripts/prepare.js",
+    "example:atomic": "ts-node examples/atomic.ts",
+    "example:basic": "ts-node examples/basic.ts",
+    "example:batch": "ts-node examples/batch.ts",
+    "example:range-query": "ts-node examples/range-query.ts",
+    "example:mtls": "ts-node examples/mtls.ts",
+    "examples": "echo 'Available examples: npm run example:basic, example:batch, example:range-query, example:atomic, example:mtls'"
+  },
+  "keywords": [
+    "key-value-store",
+    "high-performance",
+    "rioc",
+    "database",
+    "storage",
+    "kv-store"
+  ],
+  "author": "HPKV Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mehrantsi/kernel-high-performance-kv-store"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "debug": "^4.3.4",
+    "node-addon-api": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.20",
+    "@types/debug": "^4.1.12",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.10.4",
+    "chai": "^4.5.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "mocha": "^10.8.2",
+    "node-gyp": "^10.0.1",
+    "prettier": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typedoc": "^0.25.4",
+    "typescript": "^5.3.3"
+  },
+  "binary": {
+    "module_name": "rioc",
+    "module_path": "./lib/binding/{platform}-{arch}/",
+    "remote_path": "./v{version}/",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+    "host": "https://github.com/mehrantsi/kernel-high-performance-kv-store/releases/download"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "binding.gyp",
+    "src/native",
+    "runtimes"
+  ]
+}
