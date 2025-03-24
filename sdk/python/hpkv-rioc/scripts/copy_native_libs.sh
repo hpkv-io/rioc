@@ -2,7 +2,7 @@
 set -e
 
 # Get the absolute path of the workspace root
-WORKSPACE_ROOT="/workspaces/kernel-high-performance-kv-store"
+WORKSPACE_ROOT=""
 RIOC_BUILD_DIR="$WORKSPACE_ROOT/api/rioc/build"
 SDK_RUNTIMES_DIR="$WORKSPACE_ROOT/api/sdk/python/hpkv-rioc/src/hpkv_rioc/runtimes"
 

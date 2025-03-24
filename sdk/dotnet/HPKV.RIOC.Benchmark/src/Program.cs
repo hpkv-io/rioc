@@ -18,17 +18,17 @@ class Options
     [Option('t', "tls", HelpText = "Enable TLS")]
     public bool UseTls { get; set; }
 
-    [Option('c', "cert", Default = "/workspaces/kernel-high-performance-kv-store/api/rioc/certs/ca.pem", HelpText = "Path to CA certificate")]
-    public string CertPath { get; set; } = "/workspaces/kernel-high-performance-kv-store/api/rioc/certs/ca.pem";
+    [Option('c', "cert", Default = "", HelpText = "Path to CA certificate")]
+    public string CertPath { get; set; } = "";
 
-    [Option("ca", Default = "/workspaces/kernel-high-performance-kv-store/api/rioc/certs/ca.crt", HelpText = "Path to CA certificate")]
-    public string CaPath { get; set; } = "/workspaces/kernel-high-performance-kv-store/api/rioc/certs/ca.crt";
+    [Option("ca", Default = "", HelpText = "Path to CA certificate")]
+    public string CaPath { get; set; } = "";
 
-    [Option("client-cert", Default = "/workspaces/kernel-high-performance-kv-store/api/rioc/certs/client.crt", HelpText = "Path to client certificate")]
-    public string ClientCertPath { get; set; } = "/workspaces/kernel-high-performance-kv-store/api/rioc/certs/client.crt";
+    [Option("client-cert", Default = "", HelpText = "Path to client certificate")]
+    public string ClientCertPath { get; set; } = "";
 
-    [Option("client-key", Default = "/workspaces/kernel-high-performance-kv-store/api/rioc/certs/client.key", HelpText = "Path to client private key")]
-    public string ClientKeyPath { get; set; } = "/workspaces/kernel-high-performance-kv-store/api/rioc/certs/client.key";
+    [Option("client-key", Default = "", HelpText = "Path to client private key")]
+    public string ClientKeyPath { get; set; } = "";
 
     [Option('n', "num-threads", Default = 1, HelpText = "Number of threads")]
     public int NumThreads { get; set; } = 1;

@@ -12,8 +12,8 @@ from hpkv_rioc.exceptions import RiocError
 
 def get_default_cert_paths():
     """Get default certificate paths from the RIOC certs directory."""
-    workspace_root = "/workspaces/kernel-high-performance-kv-store"
-    certs_dir = os.path.join(workspace_root, "api/rioc/certs")
+    workspace_root = ""
+    certs_dir = os.path.join(workspace_root, "")
     return {
         "client_cert": os.path.join(certs_dir, "client.crt"),
         "client_key": os.path.join(certs_dir, "client.key"),

@@ -7,9 +7,9 @@ async function main() {
     port: 8000,
     timeoutMs: 5000,
     tls: {
-      caPath: '/workspaces/kernel-high-performance-kv-store/api/rioc/certs/ca.crt',
-      certificatePath: '/workspaces/kernel-high-performance-kv-store/api/rioc/certs/client.crt',
-      keyPath: '/workspaces/kernel-high-performance-kv-store/api/rioc/certs/client.key',
+      caPath: '',
+      certificatePath: '',
+      keyPath: '',
       verifyHostname: '127.0.0.1',
       verifyPeer: true
     }

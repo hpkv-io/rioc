@@ -16,9 +16,9 @@ async function main() {
   // Add TLS configuration if enabled
   if (useTls) {
     config.tls = {
-      caPath: process.env.RIOC_CA_PATH || '/workspaces/kernel-high-performance-kv-store/api/rioc/certs/ca.crt',
-      certificatePath: process.env.RIOC_CERT_PATH || '/workspaces/kernel-high-performance-kv-store/api/rioc/certs/client.crt',
-      keyPath: process.env.RIOC_KEY_PATH || '/workspaces/kernel-high-performance-kv-store/api/rioc/certs/client.key',
+      caPath: process.env.RIOC_CA_PATH || '',
+      certificatePath: process.env.RIOC_CERT_PATH || '',
+      keyPath: process.env.RIOC_KEY_PATH || '',
       verifyHostname: host,
       verifyPeer: true
     };
