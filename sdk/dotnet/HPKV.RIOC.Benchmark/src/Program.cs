@@ -176,11 +176,8 @@ class Program
 
                     // Measure only the batch execute time
                     var batchStartTime = DateTime.UtcNow;
-                    using var tracker = batch.ExecuteAsync();
+                    batch.ExecuteAsync().Wait();
                     var latency = (DateTime.UtcNow - batchStartTime).TotalMicroseconds / count;
-                    
-                    // Wait for completion separately (not timed)
-                    tracker.Wait();
                     
                     for (var j = 0; j < count; j++)
                     {
@@ -216,11 +213,8 @@ class Program
 
                     // Measure only the batch execute time
                     var batchStartTime = DateTime.UtcNow;
-                    using var tracker = batch.ExecuteAsync();
+                    batch.ExecuteAsync().Wait();
                     var latency = (DateTime.UtcNow - batchStartTime).TotalMicroseconds / count;
-                    
-                    // Wait for completion separately (not timed)
-                    tracker.Wait();
 
                     if (options.VerifyValues)
                     {
@@ -279,11 +273,8 @@ class Program
 
                     // Measure only the batch execute time
                     var batchStartTime = DateTime.UtcNow;
-                    using var tracker = batch.ExecuteAsync();
+                    batch.ExecuteAsync().Wait();
                     var latency = (DateTime.UtcNow - batchStartTime).TotalMicroseconds / count;
-                    
-                    // Wait for completion separately (not timed)
-                    tracker.Wait();
                     
                     for (var j = 0; j < count; j++)
                     {
@@ -498,11 +489,8 @@ class Program
                                 {
                                     // Measure only the batch execute time
                                     var batchStartTime = DateTime.UtcNow;
-                                    using var tracker = batch.ExecuteAsync();
+                                    batch.ExecuteAsync().Wait();
                                     var latency = (DateTime.UtcNow - batchStartTime).TotalMicroseconds / queriesInBatch;
-                                    
-                                    // Wait for completion separately (not timed)
-                                    tracker.Wait(5000);  // 5 second timeout
                                     
                                     // Process results (not timed)
                                     for (nuint i = 0; i < (nuint)queriesInBatch; i++)

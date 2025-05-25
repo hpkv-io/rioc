@@ -183,7 +183,6 @@ static void *worker_thread(void *arg) {
         if ((i + 1) % BATCH_SIZE == 0 || i == ctx->num_ops - 1) {
             uint64_t start_ns = get_timestamp_ns();
             struct rioc_batch_tracker *tracker = rioc_batch_execute_async(batch);
-            uint64_t end_ns = get_timestamp_ns();
             if (!tracker) {
                 fprintf(stderr, "Thread %d: Failed to execute batch\n", ctx->thread_id);
                 ctx->error_count[OP_INSERT]++;
@@ -191,6 +190,7 @@ static void *worker_thread(void *arg) {
             }
             
             ret = rioc_batch_wait(tracker, 0);  // Wait without timeout
+            uint64_t end_ns = get_timestamp_ns();
             
             if (ret == RIOC_SUCCESS || ret == -EEXIST) {
                 double batch_latency = (double)(end_ns - start_ns) / 1000.0;  // Convert ns to μs
@@ -254,7 +254,6 @@ static void *worker_thread(void *arg) {
         if ((i + 1) % BATCH_SIZE == 0 || i == ctx->num_ops - 1) {
             uint64_t start_ns = get_timestamp_ns();
             struct rioc_batch_tracker *tracker = rioc_batch_execute_async(batch);
-            uint64_t end_ns = get_timestamp_ns();
             if (!tracker) {
                 fprintf(stderr, "Thread %d: Failed to execute batch\n", ctx->thread_id);
                 ctx->error_count[OP_GET]++;
@@ -262,6 +261,7 @@ static void *worker_thread(void *arg) {
             }
             
             ret = rioc_batch_wait(tracker, 0);  // Wait without timeout
+            uint64_t end_ns = get_timestamp_ns();
             
             if (ret == RIOC_SUCCESS) {
                 double batch_latency = (double)(end_ns - start_ns) / 1000.0;  // Convert ns to μs
@@ -355,7 +355,6 @@ static void *worker_thread(void *arg) {
         if ((i + 1) % BATCH_SIZE == 0 || i == ctx->num_ops - 1) {
             uint64_t start_ns = get_timestamp_ns();
             struct rioc_batch_tracker *tracker = rioc_batch_execute_async(batch);
-            uint64_t end_ns = get_timestamp_ns();
             if (!tracker) {
                 fprintf(stderr, "Thread %d: Failed to execute batch\n", ctx->thread_id);
                 ctx->error_count[OP_DELETE]++;
@@ -363,6 +362,7 @@ static void *worker_thread(void *arg) {
             }
             
             ret = rioc_batch_wait(tracker, 0);  // Wait without timeout
+            uint64_t end_ns = get_timestamp_ns();
             
             if (ret == RIOC_SUCCESS) {
                 double batch_latency = (double)(end_ns - start_ns) / 1000.0;  // Convert ns to μs
@@ -527,7 +527,6 @@ static void *worker_thread(void *arg) {
             
             uint64_t start_ns = get_timestamp_ns();
             struct rioc_batch_tracker *tracker = rioc_batch_execute_async(batch);
-            uint64_t end_ns = get_timestamp_ns();
             
             if (!tracker) {
                 fprintf(stderr, "Thread %d: Failed to execute batch (retry %d)\n", 
@@ -537,6 +536,7 @@ static void *worker_thread(void *arg) {
             }
             
             ret = rioc_batch_wait(tracker, 0);  // Wait without timeout
+            uint64_t end_ns = get_timestamp_ns();
             
             if (ret == RIOC_SUCCESS) {
                 double batch_latency = (double)(end_ns - start_ns) / 1000.0;  // Convert ns to μs
