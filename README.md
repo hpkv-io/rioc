@@ -1,6 +1,6 @@
 # RIOC: Remote I/O Client
 
-Client SDKs and API for interacting with the RIOC high-performance key-value store.
+Client SDKs and API for interacting with HPKV (high performance key-value store).
 
 ## Overview
 
